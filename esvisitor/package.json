@@ -1,7 +1,7 @@
 {
 	"name": "esvisitor",
 	"description": "An ECMAScript module to visit any hashmap-like structure (AST, custom tree, ...) to apply some algorithms",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"publishConfig": {
 		"access": "public"
 	},
