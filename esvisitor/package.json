@@ -37,6 +37,7 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
+		"@swc/core": "1.4.1",
 		"quickbundle": "1.2.0",
 		"vitest": "1.2.2"
 	}
