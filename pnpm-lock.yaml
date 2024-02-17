@@ -33,12 +33,15 @@ importers:
         specifier: 1.2.2
         version: 1.2.2(@types/node@20.11.17)
 
-  examples/default:
+  examples/swc:
     dependencies:
       esvisitor:
-        specifier: ^0.0.0
+        specifier: workspace:^
         version: link:../../esvisitor
     devDependencies:
+      '@swc/core':
+        specifier: 1.4.1
+        version: 1.4.1
       esbuild-register:
         specifier: 3.4.2
         version: 3.4.2(esbuild@0.20.0)

@@ -1,14 +1,15 @@
 {
 	"private": true,
-	"name": "@examples/default",
+	"name": "@examples/swc",
 	"version": "0.0.0",
 	"scripts": {
 		"start": "node -r esbuild-register ./src/index.ts"
 	},
 	"dependencies": {
-		"esvisitor": "^0.0.0"
+		"esvisitor": "workspace:^"
 	},
 	"devDependencies": {
+		"@swc/core": "1.4.1",
 		"esbuild-register": "3.4.2"
 	}
 }

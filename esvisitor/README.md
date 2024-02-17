@@ -31,8 +31,47 @@ yarn add esvisitor
 2️⃣ Once you're done, you can play with the API:
 
 ```ts
-// TODO
+import { visit } from "esvisitor";
+
+visit<Nodes>(
+	{
+		type: "Root",
+		value: {
+			type: "Array",
+			value: [
+				{
+					type: "Variable",
+					value: "Hello",
+				},
+			],
+		},
+	},
+	{
+		Array(node) {
+			console.log("Array node: ", node);
+		},
+		Root(node) {
+			console.log("Root node: ", node);
+		},
+		Variable(node) {
+			console.log("Variable node: ", node);
+		},
+	},
+);
+
+type Nodes = {
+	Array: Node<"Array", Nodes["Variable"][]>;
+	Root: Node<"Root", Nodes["Array"][]>;
+	Variable: Node<"Variable", string>;
+};
+
+type Node<Type, Value> = {
+	type: Type;
+	value: Value;
+};
 ```
+
+You can check the [examples](../examples/) folder for more usage examples with different tree representations (including SWC parser, ...).
 
 <br>
 

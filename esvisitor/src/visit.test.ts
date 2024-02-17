@@ -4,7 +4,7 @@ import { visit } from "./visit";
 
 describe("visit", () => {
 	test("should visit a single node", () => {
-		let actualNode: RootNode | undefined = undefined;
+		let actualNode: Nodes["Root"] | undefined = undefined;
 
 		visit<Nodes>(TREE, {
 			Root(node) {
@@ -16,7 +16,7 @@ describe("visit", () => {
 	});
 
 	test("should visit a list of nodes", () => {
-		const actualNodes: VariableNode[] = [];
+		const actualNodes: Nodes["Variable"][] = [];
 
 		visit<Nodes>(TREE, {
 			Variable(node) {
@@ -43,18 +43,12 @@ const TREE = {
 } as const;
 
 type Nodes = {
-	Array: ArrayNode;
-	Root: RootNode;
-	Variable: VariableNode;
+	Array: Node<"Array", Nodes["Variable"][]>;
+	Root: Node<"Root", Nodes["Array"][]>;
+	Variable: Node<"Variable", string>;
 };
 
 type Node<Type, Value> = {
 	type: Type;
 	value: Value;
 };
-
-type VariableNode = Node<"Variable", string>;
-
-type ArrayNode = Node<"Array", VariableNode[]>;
-
-type RootNode = Node<"Root", ArrayNode[]>;
