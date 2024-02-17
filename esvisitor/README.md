@@ -71,7 +71,7 @@ type Node<Type, Value> = {
 };
 ```
 
-You can check the [examples](../examples/) folder for more usage examples with different tree representations (including SWC parser, ...).
+_You can check the [examples](../examples/) folder for different hashmap structure processing (including parser-specific abstract syntax trees)._
 
 <br>
 
