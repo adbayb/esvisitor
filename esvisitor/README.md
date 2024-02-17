@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-    <h1>📦 esvisitor</h1>
+    <h1><img width="256" alt="ESVisitor" title="ESVisitor" src="https://github.com/adbayb/esvisitor/assets/10498826/136faa17-8cc2-4ef8-9eda-60f1cbeb4f54"></h1>
     <strong>An ECMAScript module to visit any hashmap-like structure (AST, custom tree, ...) and apply some algorithms</strong>
 </div>
 <br>
