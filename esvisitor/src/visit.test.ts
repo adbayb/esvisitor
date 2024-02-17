@@ -27,6 +27,40 @@ describe("visit", () => {
 		expect(actualNodes).toHaveLength(1);
 		expect(actualNodes[0]).toStrictEqual(TREE.value.value[0]);
 	});
+
+	test("should enter a node", () => {
+		const enterQueue: Node<unknown, unknown>["type"][] = [];
+
+		visit<Nodes>(TREE, {
+			Array: {
+				enter(node) {
+					enterQueue.push(node.type);
+				},
+			},
+			Variable(node) {
+				enterQueue.push(node.type);
+			},
+		});
+
+		expect(enterQueue).toStrictEqual(["Array", "Variable"]);
+	});
+
+	test("should exit a node", () => {
+		const exitQueue: Node<unknown, unknown>["type"][] = [];
+
+		visit<Nodes>(TREE, {
+			Array: {
+				exit(node) {
+					exitQueue.push(node.type);
+				},
+			},
+			Variable(node) {
+				exitQueue.push(node.type);
+			},
+		});
+
+		expect(exitQueue).toStrictEqual(["Variable", "Array"]);
+	});
 });
 
 const TREE = {
