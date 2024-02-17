@@ -8,24 +8,31 @@
 
 ## ✨ Features
 
-TODO
+-   Tiny module with zero dependencies (less than 300B 🚀)
+-   Apply the visitor design pattern in a functional way with ease
+-   Tree-structure agnostic (AST whatever the underlying parser, custom tree, ...).  
+    Any hashmap-like structure can be visited as long as each node exposes a `type` field
 
 <br>
 
-## 🚀 Usage
+## 🚀 Quickstart
 
-This section introduces the `esvisitor` essentials by walking through its main commands:
+1️⃣ Install the library:
 
-0️⃣ ...
-1️⃣ ...
-2️⃣ ...
-3️⃣ ...
+```bash
+# Npm
+npm install esvisitor
+# Pnpm
+pnpm add esvisitor
+# Yarn
+yarn add esvisitor
+```
 
-<br>
+2️⃣ Once you're done, you can play with the API:
 
-## 🏗️ Architecture
-
-TODO
+```ts
+// TODO
+```
 
 <br>
 
