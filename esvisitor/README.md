@@ -10,7 +10,7 @@
 
 -   Tiny module with zero dependencies (less than 300B 🚀)
 -   Apply the visitor design pattern in a functional way with ease
--   Tree-structure agnostic (AST whatever the underlying parser, custom tree, ...).  
+-   Data structure agnostic (a custom tree, a parser-specific abstract syntax tree, ...).  
     Any hashmap-like structure can be visited as long as each node exposes a `type` field
 
 <br>
@@ -71,7 +71,7 @@ type Node<Type, Value> = {
 };
 ```
 
-_You can check the [examples](../examples/) folder for different hashmap structure processing (including parser-specific abstract syntax trees)._
+_You can check the [examples](https://github.com/adbayb/esvisitor/tree/main/examples) folder for different hashmap structure processing (including parser-specific abstract syntax trees)._
 
 <br>
 
